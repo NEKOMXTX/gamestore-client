@@ -11,16 +11,16 @@ const ProductItem = ({product, marketplaces}) => {
     console.log(product.marketplaceId)
     return (
         <Col 
-        md={3} 
+        md={4} 
         className={"mt-3"}
         onClick={() => history.push(PRODUCT_ROUTE + '/' + product.id)}
         >
             <Card 
-            style={{width: 150, cursor: 'pointer'}} 
+            style={{width: 220, cursor: 'pointer'}} 
             border={"light"}
             className='mx-2'
             >
-                <Image width={150} height={150} src={process.env.REACT_APP_API_URL + product.img}/>
+                <Image width={220} height={220} src={process.env.REACT_APP_API_URL + product.img}/>
                 <div className='mt-1 text-black-50 d-flex justify-content-between align-items-center'>
                     <div>
                         {marketplaces[product.marketplaceId - 1]}
@@ -30,7 +30,15 @@ const ProductItem = ({product, marketplaces}) => {
                         <Image width={18} height={18} src={star}/>
                     </div>
                 </div>
-                <div>{product.name}</div>
+                
+                <div className='mt-1 d-flex justify-content-between align-items-center'>
+                    <div>
+                        <div>{product.name}</div>
+                    </div>
+                    <div className='d-flex align-items-center'>
+                        <div>{product.price} руб.</div>
+                    </div>
+                </div>
             </Card>
         </Col>
     );
