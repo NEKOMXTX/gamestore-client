@@ -74,5 +74,4 @@ export default class ProductStore {
         return this._limit
     }
 
-    
 }

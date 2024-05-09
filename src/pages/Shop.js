@@ -25,7 +25,7 @@ const Shop = observer(() => {
             product.setProducts(data.rows)
             product.setTotalCount(data.count)
         }) // rows из-за пагинации
-    }, [product.page, product.selectedGenre, product.selectedMarketpalce])
+    }, [product.page, product.selectedGenre, product.selectedMarketplace])
 
     return (
         <Container>

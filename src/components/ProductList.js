@@ -6,13 +6,13 @@ import ProductItem from './ProductItem';
 
 const ProductList = observer(() => {
     const {product} = useContext(Context)
-    
+    // product.marketplaces.map(marketplace => console.log(marketplace.name)) 
+    const marketplaces = product.marketplaces.map(marketplace => marketplace.name)
     return (
         <Row className="d-flex">
             {product.products.map(product => 
-              <ProductItem key={product.id} product={product}/>  
+              <ProductItem key={product.id} product={product} marketplaces={marketplaces}/>  
             )}
-            
         </Row>
     );
 });
