@@ -9,6 +9,8 @@ import { ADMIN_ROUTE, LOGIN_ROUTE, SHOP_ROUTE } from '../utils/consts';
 import Button from 'react-bootstrap/Button';
 import {observer} from "mobx-react-lite";
 import { useHistory } from "react-router-dom";
+import { Image } from 'react-bootstrap';
+import shoplogo from '../assets/shoplogo.png'
 
 const NavBar = observer(() => {
     const {user} = useContext(Context)
@@ -26,7 +28,9 @@ const NavBar = observer(() => {
     return (
         <Navbar bg="dark" data-bs-theme="dark">
           <Container>
-            <NavLink style={{color: 'white'}} to={SHOP_ROUTE}>Игрошоп</NavLink>
+            <NavLink style={{color: 'white'}} to={SHOP_ROUTE}>
+              <Image src={shoplogo}/>
+            </NavLink>
             {user.isAuth ?
               user.isAdmin ?
                 <Nav className="ms-auto" style={{color: 'white'}}>
