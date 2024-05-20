@@ -29,7 +29,6 @@ const Auth = observer(() => {
             if (data.role === "ADMIN"){
                 user.setIsAdmin(true)
             }
-            console.log(data.role === "ADMIN")
             history.push(SHOP_ROUTE)
         } catch (e) {
             alert(e.response.data.message)
@@ -63,7 +62,7 @@ const Auth = observer(() => {
                         {isLogin ?
 
                             <Form.Text>
-                                Нет аккаунта? <NavLink to={REGISTRATION_ROUTE}>Зарегистрируйся!</NavLink>
+                                Нет аккаунта? <NavLink to={REGISTRATION_ROUTE}>Зарегистрируйтесь!</NavLink>
                             </Form.Text>
                             :
                             <Form.Text>

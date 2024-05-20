@@ -5,10 +5,7 @@ import { useParams } from "react-router-dom";
 import { fetchOneProduct } from "../http/productAPI";
 
 const ProductPage = () => {
-    // const product = { id: 1, name: 'SQUAD', price: 10, rating: 5, img: 'https://placehold.co/300x300' }
-    // const description = [ // модель описания подтягивается из моделей сервера
-    //     { id: 1, title: 'Описание', description: 'Описание геймплея и тдОписание геймплея и тдОписание геймплея и тдОписание геймплея и тдОписание геймплея и тдОписание геймплея и тдОписание геймплея и тдОписание геймплея и тдОписание геймплея и тдОписание геймплея и тдОписание геймплея и тдОписание геймплея и тд'},
-    // ] 
+
 
     const [product, setProduct] = useState({info: []})
     const {id} = useParams()
@@ -51,7 +48,8 @@ const ProductPage = () => {
                 
                 {product.info.map(info =>
                     <Row key={info.id}>
-                        <h1>{info.title}</h1>{info.description}
+                        <h1>{info.title}:</h1>
+                        {info.description}
                     </Row>
                 )}
             </Row>
