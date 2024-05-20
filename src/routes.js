@@ -21,6 +21,14 @@ export const authUserRoutes = [
         path: BASKET_ROUTE,
         Component: Basket
     },
+    {
+        path: SHOP_ROUTE,
+        Component: Shop
+    },
+    {
+        path: PRODUCT_ROUTE + '/:id',
+        Component: ProductPage
+    },
 ]
 
 export const publicRoutes = [ 

@@ -6,9 +6,7 @@ import { PRODUCT_ROUTE } from '../utils/consts';
 
 const ProductItem = ({product, marketplaces}) => {
     const history = useHistory()
-
-    // console.log(marketplaces)
-    console.log(product.marketplaceId)
+    
     return (
         <Col 
         md={4} 

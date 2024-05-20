@@ -6,6 +6,7 @@ export default class ProductStore {
         this._marketplaces = []
         this._products = []
         // this._keys
+        this._baskets = []
         this._selectedGenre = {}
         this._selectedMarketplace = {}
         this._page = 1
@@ -27,6 +28,10 @@ export default class ProductStore {
         this._products = prdoucts
     }
 
+    setBaskets(basket){
+        this._baskets = basket
+    }
+
     setSelectedGenre(genre) {
         this.setPage(1)
         this._selectedGenre = genre
@@ -45,7 +50,11 @@ export default class ProductStore {
         this._totalCount = count
     }
     
+    
 
+    get basket() {
+        return this._baskets
+    }
     get marketplaces() {
         return this._marketplaces
     }

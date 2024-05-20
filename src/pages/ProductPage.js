@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import { Container, Col, Image, Row, Card, Button } from "react-bootstrap";
 import bigStar from "../assets/bigStar.png"
 import { useParams } from "react-router-dom";
-import { fetchOneProduct } from "../http/productAPI";
+import { addToBasket,fetchOneProduct } from "../http/productAPI";
 
 const ProductPage = () => {
 
@@ -14,6 +14,11 @@ const ProductPage = () => {
         fetchOneProduct(id).then(data => setProduct(data))
     }, [])
 
+    const add = () => {
+        const formData = new FormData()
+        formData.append('productId', id)
+        addToBasket(formData).then(response => alert(`Товар ` + product.name + ` был добавлен в вашу корзину!`))
+    }
     return (
         <Container className="mt-3">
             <Row>
@@ -39,7 +44,7 @@ const ProductPage = () => {
                     
                     >
                         <h3>{product.price}</h3>
-                        <Button variant={"outline-dark"}>Добавить в корзину</Button>
+                        <Button variant={"outline-dark"} onClick={add}>Добавить в корзину</Button>
                     </Card>
 
                 </Col>
