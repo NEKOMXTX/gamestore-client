@@ -15,9 +15,9 @@ const Basket = observer(() => {
         getBasket().then(data => product.setBaskets(data))
     }, [])
 
-    let totalBasketpric = 0;
+    let totalBasketprice = 0;
     {product.basket.map(price =>
-        totalBasketpric += Number(price.product.price)
+        totalBasketprice += Number(price.product.price)
     )}
     return (
         <Container
@@ -31,7 +31,7 @@ const Basket = observer(() => {
 
             <Card className="d-flex flex-row  p-2 justify-content-between align-items-center mb-2">
                 <h1 className="pr-2">Итого:</h1>
-                <h3 className="pl-2">{totalBasketpric}<span className="font-weight-light pl-2">рублей</span></h3>
+                <h3 className="pl-2">{totalBasketprice}<span className="font-weight-light pl-2">рублей</span></h3>
             </Card>
 
 
