@@ -29,7 +29,7 @@ const NavBar = observer(() => {
         <Navbar bg="dark" data-bs-theme="dark">
           <Container>
             <NavLink style={{color: 'white'}} to={SHOP_ROUTE}>
-              <Image src={shoplogo}/>
+              <Image src={shoplogo} fluid/>
             </NavLink>
             {user.isAuth ?
               user.isAdmin ?
